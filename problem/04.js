@@ -8,9 +8,20 @@
  * @returns {string} - "Hello, my name is Alice"
  */
 
-const person = {};
+const person = {
+  name: 'Alice',
+  greet: function () {
+    return `Hello, my name is ${this.name}`;
+  },
+};
 
-function implicitBinding() {}
+function implicitBinding() {
+  let answer = person.greet();
+  return answer;
+}
+
+console.log('메서드로', person.greet());
+console.log('함수로', implicitBinding());
 
 // export 수정 불가
 export { person, implicitBinding };

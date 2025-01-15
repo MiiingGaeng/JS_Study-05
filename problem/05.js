@@ -8,9 +8,13 @@
  */
 
 const car = {
-  brand: "Toyota",
+  brand: 'Toyota',
+
+  getBrand: function () {
+    return this.brand;
+  },
 };
 
-let bound;
+let bound = car.getBrand.bind(car);
 
 export { car, bound };
